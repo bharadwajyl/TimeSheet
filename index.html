@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--TITLE-->
+<title>Time Sheet</title>
+
+<!--SHORTCUT ICON-->
+<link rel="shortcut icon" href="#" />
+
+<!--META TAGS-->
+<meta charset="UTF-8" />
+<meta name="language" content="ES" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+<!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<!--GOOGLE FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<!--PLUGIN-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<!--STYLE SHEET-->
+<link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+<body>
+
+<!--MAIN-->
+<main class="padding_1x">
+    <table>
+        <caption>Time Sheet Calculator</caption>
+        <!--theader-->
+        <thead>
+            <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Starting Time</th>
+                <th scope="col">Ending Time</th>
+                <th scope="col">Break Deduction <i class="fa fa-question"></i></th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <!--tbody-->
+        <tbody>
+            <tr>
+                <td data-label="Monday">Monday</td>
+                <td data-label="Starting Time">
+                <aside class="fixed_flex start_time">
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]"  required />
+                <strong>:</strong>
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                <select name="meridian[]">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+                </select>
+                </aside> 
+                </td>
+                <td data-label="Ending Time">
+                    <aside class="fixed_flex end_time">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                        <select name="meridian[]">
+                            <option value="am">AM</option>
+                            <option value="pm">PM</option>
+                        </select>
+                    </aside> 
+                </td>
+                <td data-label="Break Deduction">
+                    <aside class="fixed_flex break_deduction">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                    </aside> 
+                </td>
+                <td data-label="Total" class="total">0 : 00</td>
+            </tr>
+            <tr>
+                <td data-label="Tuesday">Tuesday</td>
+                <td data-label="Starting Time">
+                <aside class="fixed_flex start_time">
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]"  required />
+                <strong>:</strong>
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                <select name="meridian[]">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+                </select>
+                </aside> 
+                </td>
+                <td data-label="Ending Time">
+                    <aside class="fixed_flex end_time">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                        <select name="meridian[]">
+                            <option value="am">AM</option>
+                            <option value="pm">PM</option>
+                        </select>
+                    </aside> 
+                </td>
+                <td data-label="Break Deduction">
+                    <aside class="fixed_flex break_deduction">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                    </aside> 
+                </td>
+                <td data-label="Total" class="total">0 : 00</td>
+            </tr>
+            <tr>
+                <td data-label="Wednesday">Wednesday</td>
+                <td data-label="Starting Time">
+                <aside class="fixed_flex start_time">
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]"  required />
+                <strong>:</strong>
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                <select name="meridian[]">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+                </select>
+                </aside> 
+                </td>
+                <td data-label="Ending Time">
+                    <aside class="fixed_flex end_time">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                        <select name="meridian[]">
+                            <option value="am">AM</option>
+                            <option value="pm">PM</option>
+                        </select>
+                    </aside> 
+                </td>
+                <td data-label="Break Deduction">
+                    <aside class="fixed_flex break_deduction">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                    </aside> 
+                </td>
+                <td data-label="Total" class="total">0 : 00</td>
+            </tr>
+            <tr>
+                <td data-label="Thursday">Thursday</td>
+                <td data-label="Starting Time">
+                <aside class="fixed_flex start_time">
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]"  required />
+                <strong>:</strong>
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                <select name="meridian[]">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+                </select>
+                </aside> 
+                </td>
+                <td data-label="Ending Time">
+                    <aside class="fixed_flex end_time">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                        <select name="meridian[]">
+                            <option value="am">AM</option>
+                            <option value="pm">PM</option>
+                        </select>
+                    </aside> 
+                </td>
+                <td data-label="Break Deduction">
+                    <aside class="fixed_flex break_deduction">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                    </aside> 
+                </td>
+                <td data-label="Total" class="total">0 : 00</td>
+            </tr>
+            <tr>
+                <td data-label="Friday">Friday</td>
+                <td data-label="Starting Time">
+                <aside class="fixed_flex start_time">
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]"  required />
+                <strong>:</strong>
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                <select name="meridian[]">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+                </select>
+                </aside> 
+                </td>
+                <td data-label="Ending Time">
+                    <aside class="fixed_flex end_time">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                        <select name="meridian[]">
+                            <option value="am">AM</option>
+                            <option value="pm">PM</option>
+                        </select>
+                    </aside> 
+                </td>
+                <td data-label="Break Deduction">
+                    <aside class="fixed_flex break_deduction">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                    </aside> 
+                </td>
+                <td data-label="Total" class="total">0 : 00</td>
+            </tr>
+            <tr>
+                <td data-label="Saturday">Saturday</td>
+                <td data-label="Starting Time">
+                <aside class="fixed_flex start_time">
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]"  required />
+                <strong>:</strong>
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                <select name="meridian[]">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+                </select>
+                </aside> 
+                </td>
+                <td data-label="Ending Time">
+                    <aside class="fixed_flex end_time">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                        <select name="meridian[]">
+                            <option value="am">AM</option>
+                            <option value="pm">PM</option>
+                        </select>
+                    </aside> 
+                </td>
+                <td data-label="Break Deduction">
+                    <aside class="fixed_flex break_deduction">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                    </aside> 
+                </td>
+                <td data-label="Total" class="total">0 : 00</td>
+            </tr>
+            <tr>
+                <td data-label="Sunday">Sunday</td>
+                <td data-label="Starting Time">
+                <aside class="fixed_flex start_time">
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]"  required />
+                <strong>:</strong>
+                <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                <select name="meridian[]">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+                </select>
+                </aside> 
+                </td>
+                <td data-label="Ending Time">
+                    <aside class="fixed_flex end_time">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                        <select name="meridian[]">
+                            <option value="am">AM</option>
+                            <option value="pm">PM</option>
+                        </select>
+                    </aside> 
+                </td>
+                <td data-label="Break Deduction">
+                    <aside class="fixed_flex break_deduction">
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="hour[]" required />
+                        <strong>:</strong>
+                        <input type="tel" placeholder="0" maxlength="2" value="00" name="minute[]" required />
+                    </aside> 
+                </td>
+                <td data-label="Total" class="total">0 : 00</td>
+            </tr>
+        </tbody>
+        <!--tfooter-->
+        <tfoot>
+            <tr>
+                <td colspan="5" class="result"><b>Total hours:</b> 0 : 00</td>
+            </tr>
+        </tfoot>
+    </table>
+    
+    <section class="buttons fixed_flex">
+        <a href="javascript:void(0)" class="btn btn_1 calculate"><i class="fa fa-calculator"></i> Calculate</a>
+        <a href="javascript:void(0)" class="btn btn_1 clear"><i class="fa fa-times-circle-o"></i> Clear All</a>
+    </section>
+</main>
+
+<!--JAVSCRIPT-->
+<script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+</html>
