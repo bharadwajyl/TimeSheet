@@ -7,11 +7,7 @@ $(".calculate").on("click", function(){
             s_mer.push(this.value);
         });
         $(".start_time").children("input[name='hour[]']").each( function() { 
-            if (s_mer[count] == "pm"){
-                s_hour.push(parseInt(this.value) + 12);
-            } else {
-                s_hour.push(this.value);
-            }
+            s_hour.push(this.value);
             count++;
         });
         $(".start_time").children("input[name='minute[]']").each( function() { 
@@ -23,11 +19,7 @@ $(".calculate").on("click", function(){
             e_mer.push(this.value);
         });
         $(".end_time").children("input[name='hour[]']").each( function() { 
-            if (e_mer[count] == "pm"){
-                e_hour.push(parseInt(this.value) + 12);
-            } else {
-                e_hour.push(this.value);
-            }
+            e_hour.push(this.value);
             count++;
         });
         $(".end_time").children("input[name='minute[]']").each( function() { 
@@ -42,21 +34,24 @@ $(".calculate").on("click", function(){
         });
         //Calculate total and insert
         count = 0;
-        let r_minute, r_hour;
-        var format = /[-]/;
+        var total_minutes  = 0, totalMinutes;
         $(".total").each( function() { 
-            r_hour = e_hour[count] - s_hour[count]  - bd_hour[count];
-            r_minute = (Math.abs(s_minute[count]) - Math.abs(e_minute[count]) - Math.abs(bd_minute[count]));
-            if (format.test(r_minute)){
-                r_hour = r_hour - 1;
-                r_minute = 60 + r_minute;
+            if ((s_mer[count] == "pm") && (parseInt(s_hour[count]) >=1 && parseInt(s_hour[count]) < 12)){
+                e_mer[count] == "am" && e_hour[count] <= 11 ? e_hour[count] = parseInt(e_hour[count]) + 12 : s_hour[count] = parseInt(s_hour[count]) + 12;
+            } 
+            if ((e_mer[count] == "pm") && (parseInt(e_hour[count]) >=1 && parseInt(e_hour[count]) <= 12)){
+                e_hour[count] = parseInt(e_hour[count]) + 12;
             }
-            total_hour += + r_hour;
-            total_minute += + r_minute;
-            $(this).html( r_hour + " : " + r_minute);
+            totalMinutes = Math.abs(Math.abs(parseInt(s_hour[count]) * 60) - Math.abs(parseInt(e_hour[count]) * 60) + Math.abs(parseInt(bd_hour[count]) * 60) + Math.abs(parseInt(bd_minute[count]))  + Math.abs(parseInt(s_minute[count])) - Math.abs(parseInt(e_minute[count])));
+            total_minutes += + totalMinutes;
             count++;
+            var hours = Math.floor(totalMinutes / 60);          
+            var minutes = totalMinutes % 60;
+             $(this).html( hours + " : " + minutes);
         });
-        $(".result").html("<b>Total hours: </b>" + parseInt(Math.abs(total_hour)) + " : " + Number(parseInt(total_minute) / 60).toFixed(2).split(".")[1]);
+        var total_hour = Math.floor(total_minutes / 60);          
+        var total_minute = total_minutes % 60;
+        $(".result").html("<b>Total hours: </b>" + total_hour + " : " + total_minute);
 });
 
 
@@ -69,3 +64,9 @@ $(".clear").on("click", function(){
     });
     $(".result").html("<b>Total hours: </b> 0 : 00");
 });
+
+
+function error(){
+    alert("t");
+    return true;
+}
