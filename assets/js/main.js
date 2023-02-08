@@ -64,9 +64,3 @@ $(".clear").on("click", function(){
     });
     $(".result").html("<b>Total hours: </b> 0 : 00");
 });
-
-
-function error(){
-    alert("t");
-    return true;
-}
